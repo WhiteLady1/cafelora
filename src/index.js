@@ -1,5 +1,6 @@
 import './index.html';
 import './style.css';
+import { Layer } from './Layer';
 
 console.log('funguju!');
 
@@ -11,7 +12,6 @@ btnElm.addEventListener('click', () => {
 });
 
 const navClose = document.querySelectorAll('a');
-console.log(navClose);
 for (let i = 0; i < navClose.length; i++) {
   navClose[i].addEventListener('click', () => {
     const navigace = document.querySelector('nav');
@@ -34,3 +34,12 @@ btnOrder.addEventListener('click', () => {
     ordered = false;
   }
 });
+
+//----------- Ingredience jako komponenta ----------
+const pole = {
+  color: '#feeeca',
+  label: 'mléčná pěna++',
+};
+
+const prvniVrstva = document.querySelector('.layer');
+prvniVrstva.innerHTML = Layer(pole);
