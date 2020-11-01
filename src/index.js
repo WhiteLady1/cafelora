@@ -1,6 +1,6 @@
 import './index.html';
 import './style.css';
-import { Layer } from './Layer';
+import { Drink } from './Drink';
 
 console.log('funguju!');
 
@@ -36,43 +36,12 @@ for (let i = 0; i < btnOrder.length; i++) {
     }
   });
 }
-console.log(btnOrder.length);
 
 //----------- Ingredience jako komponenta ----------
 
 //----------- Seznam ingrediencí -----------
 
-const Layers = (props) => {
-  let result = '<div class="drink__layers">';
-  for (let i = 0; i < props.length; i++) {
-    result += Layer(props[i]);
-  }
-  result += '</div>';
-  return result;
-};
-
 //--------- Nápoj jako komponenta ----------
-
-const Drink = (props) => {
-  const newDrink = document.createElement('div');
-  newDrink.className = 'drink';
-  newDrink.innerHTML = `
-  <div class="drink__product">
-              <div class="drink__cup">
-                <img src="/assets/cups/${props.id}.png" />
-              </div>
-              <div class="drink__info">
-                <h3>${props.name}</h3>
-                ${Layers(props.layers)}
-                
-              </div>
-            </div>
-            <div class="drink__controls">
-              <button class="order-btn">Objednat</button>
-            </div>
-  `;
-  return newDrink;
-};
 
 //---------- Seznam nápojů ----------
 
