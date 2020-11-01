@@ -39,12 +39,6 @@ for (let i = 0; i < btnOrder.length; i++) {
 console.log(btnOrder.length);
 
 //----------- Ingredience jako komponenta ----------
-const pole = {
-  color: '#feeeca',
-  label: 'mléčná pěna++',
-};
-
-const prvniVrstva = document.querySelectorAll('.layer');
 
 //----------- Seznam ingrediencí -----------
 
@@ -126,7 +120,6 @@ const allDrinks = (drinks) => {
   });
 };
 
-allDrinks(drinks);
 //---------- API ----------
 
 fetch('http://cafelora.kodim.cz/api/drinks')
