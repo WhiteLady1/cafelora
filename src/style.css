@@ -242,6 +242,21 @@ nav a:hover {
   background-attachment: fixed;
 }
 
+.gallery_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 50px;
+}
+.gallery p {
+  font-size: 20px;
+  text-align: center;
+  width: 70%;
+  padding: 20px;
+  background-color: #301a1a8f;
+}
+
 .contacts {
   margin-bottom: 4rem;
 
