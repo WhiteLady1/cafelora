@@ -41,5 +41,24 @@ const pole = {
   label: 'mléčná pěna++',
 };
 
-const prvniVrstva = document.querySelector('.layer');
-prvniVrstva.innerHTML = Layer(pole);
+const prvniVrstva = document.querySelectorAll('.layer');
+
+//----------- Seznam ingrediencí -----------
+const layers = [
+  {
+    color: '#feeeca',
+    label: 'mléčná pěna--',
+  },
+  {
+    color: '#fed7b0',
+    label: 'teplé mléko+-',
+  },
+  {
+    color: '#613916',
+    label: 'espresso++',
+  },
+];
+
+for (let i = 0; i < layers.length; i++) {
+  prvniVrstva[i].innerHTML = Layer(layers[i]);
+}
