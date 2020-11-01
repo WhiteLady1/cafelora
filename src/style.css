@@ -282,6 +282,9 @@ nav a:hover {
     margin-top: 0rem;
     margin-bottom: 0rem;
   }
+  .nav-btn {
+    display: none;
+  }
 
   .nav-closed {
     display: block;
