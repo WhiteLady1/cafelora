@@ -59,6 +59,52 @@ const layers = [
   },
 ];
 
-for (let i = 0; i < layers.length; i++) {
-  prvniVrstva[i].innerHTML = Layer(layers[i]);
-}
+const Layers = (props) => {
+  let result = '<div class="drink__layers">';
+  for (let i = 0; i < props.length; i++) {
+    result += Layer(props[i]);
+  }
+  result += '</div>';
+  return result;
+};
+
+//--------- Nápoj jako komponenta ----------
+const romano = {
+  id: 'romano',
+  name: 'Romano',
+  ordered: false,
+  layers: [
+    {
+      color: '#fbdf5b',
+      label: 'citrón',
+    },
+    {
+      color: '#613916',
+      label: 'espresso',
+    },
+  ],
+};
+
+const Drink = (props) => {
+  const newDrink = document.createElement('div');
+  newDrink.className = 'drink';
+  newDrink.innerHTML = `
+  <div class="drink__product">
+              <div class="drink__cup">
+                <img src="/assets/cups/${props.id}.png" />
+              </div>
+              <div class="drink__info">
+                <h3>${props.name}</h3>
+                ${Layers(props.layers)}
+                
+              </div>
+            </div>
+            <div class="drink__controls">
+              <button class="order-btn">Objednat</button>
+            </div>
+  `;
+  return newDrink;
+};
+
+const prodatDrink = document.querySelector('.drinks-list');
+prodatDrink.appendChild(Drink(romano));
